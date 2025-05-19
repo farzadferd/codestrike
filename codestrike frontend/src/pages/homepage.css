@@ -1,0 +1,351 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  background-color: #1e1e2e;
+}
+
+.sidebar {
+  width: 120px !important;
+  background-color: #2b2b3b;
+  border-right: 1px solid #3d3d4d;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.icon-container {
+  padding: 1.2rem;
+  padding-left: 8px;
+  border-bottom: 1px solid #3d3d4d;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-height: 160px;
+  margin-top: 35px;
+}
+
+.profile-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  margin-left: 5px;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: background-color 0.2s;
+}
+
+.profile-icon:hover {
+  background-color: #3d3d4d;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.profile-icon img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.sidebar-icon {
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin-left: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.sidebar-icon:hover {
+  background-color: #3d3d4d;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Friends Panel Styles */
+.friends-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  overflow: hidden;
+  height: calc(100vh - 250px);
+}
+
+.friends-panel h2 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-left: 0;
+  margin-left: 8px;
+}
+
+.friends-input {
+  width: calc(100% - 16px);
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 8px 12px;
+  background-color: #3d3d4d;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.friends-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-left: 8px;
+  width: calc(100% - 8px);
+  max-height: calc(100vh - 350px);
+  scrollbar-width: thin;
+  scrollbar-color: #3d3d4d #2b2b3b;
+}
+
+.friends-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.friends-list::-webkit-scrollbar-track {
+  background: #2b2b3b;
+}
+
+.friends-list::-webkit-scrollbar-thumb {
+  background: #3d3d4d;
+  border-radius: 3px;
+}
+
+.friends-list::-webkit-scrollbar-thumb:hover {
+  background: #4d4d5d;
+}
+
+.friend-item {
+  padding: 4px 0;
+  margin-bottom: 2px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.friend-item.online {
+  color: #4ade80 !important;
+}
+
+.friend-item.offline {
+  color: #ff1e1e !important;
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 120px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e2e;
+  height: 100vh;
+  min-width: 0;
+  position: relative;
+}
+
+/* Top bar fixes */
+.top-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 120px;
+  height: 35px;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #3d3d4d;
+  z-index: 99;
+}
+
+/* File tab styling */
+.top-bar span {
+  height: 100%;
+  padding: 0 15px;
+  background-color: #2b2b3b;
+  color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  border-right: 1px solid #3d3d4d;
+  position: relative;
+  z-index: 2;
+}
+
+/* Logout button styling */
+.logout-btn {
+  height: 100%;
+  padding: 0 12px;
+  background-color: #2b2b3b;
+  border: none;
+  color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  cursor: pointer;
+  min-width: 60px;
+  max-width: fit-content;
+  font-weight: 400;
+  opacity: 1;
+  text-transform: none;
+  margin-right: 0;
+}
+
+.logout-btn:hover {
+  background-color: #3d3d4d;
+}
+
+/* Remove any potential conflicting styles */
+.top-bar button {
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* Style for the active file tab */
+.top-bar span {
+  background-color: #2b2b3b;  /* Make active tab stand out */
+  border-right: 1px solid #3d3d4d;
+  min-width: 80px;  /* Give it some minimum width */
+  justify-content: center;  /* Center the text */
+  font-weight: 500;  /* Slightly bolder text */
+}
+
+/* Code Area Styles */
+.code-area {
+  margin-top: 35px;
+  padding: 2rem;
+  background-color: #1e1e2e;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 120px;
+  right: 0;
+  bottom: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.include-statement {
+  color: #ff1e1e;
+  margin-bottom: 1rem;
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.code-line {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-family: 'Consolas', 'Monaco', monospace;
+  display: flex;
+  align-items: center;
+}
+
+.indent {
+  padding-left: 2rem;
+}
+
+.function-play {
+  color: #4ade80;
+  cursor: pointer;
+}
+
+.function-leaderboard {
+  color: #ffd700;
+  cursor: pointer;
+}
+
+.function-account {
+  color: #60a5fa;
+  cursor: pointer;
+}
+
+.comment {
+  color: #6b7280;
+  margin-left: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Terminal Styles */
+.bottom-bar {
+  height: 150px;
+  background-color: #1a1a1a;
+  border-top: 1px solid #3d3d4d;
+  display: flex;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 120px;
+}
+
+.terminal-prompt {
+  display: flex;
+  width: 100%;
+  color: #9ca3af;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 15px;
+}
+
+.prompt-text {
+  user-select: none;
+  padding-right: 4px;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+.terminal-input {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 15px;
+  flex: 1;
+  resize: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.terminal-input:focus {
+  outline: none;
+}
+
+/* Make sure there's no conflicting global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Add some spacing between code elements */
+.spacer {
+  height: 2.5rem;
+}
